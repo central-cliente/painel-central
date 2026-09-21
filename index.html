@@ -27,22 +27,43 @@
   }
   .subtitulo { text-align: center; color: #6b7a99; font-size: 13px; margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
 
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .topbar .atualizado { color: #8fa8d4; font-size: 12px; letter-spacing: 1px; }
+  .topbar .atualizado strong { color: #4facfe; }
+  .topbar button {
+    background: linear-gradient(90deg, #4facfe, #00c6fb);
+    color: #0a0e1a;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: .2s;
+    letter-spacing: 1px;
+  }
+  .topbar button:hover { transform: scale(1.05); }
+
   .upload {
     text-align: center;
     background: #1a2338;
-    padding: 22px;
+    padding: 18px;
     border-radius: 14px;
-    max-width: 600px;
-    margin: 0 auto 30px;
+    max-width: 700px;
+    margin: 0 auto 25px;
     border: 1px solid #2a3a5c;
     box-shadow: 0 8px 32px rgba(0,0,0,.4);
   }
-  .upload p { color: #a8b8d8; margin-bottom: 8px; font-size: 14px; font-weight: bold; }
-  .upload input[type=file] {
-    color: #a8b8d8;
-    font-size: 13px;
-    font-weight: bold;
-  }
+  .upload p { color: #a8b8d8; margin-bottom: 8px; font-size: 13px; font-weight: bold; }
+  .upload input[type=file] { color: #a8b8d8; font-size: 13px; font-weight: bold; }
   .upload input::file-selector-button {
     background: linear-gradient(90deg, #4facfe, #00c6fb);
     color: #0a0e1a;
@@ -57,7 +78,6 @@
   .upload input::file-selector-button:hover { transform: scale(1.05); }
   .status { text-align: center; margin-top: 12px; font-weight: bold; font-size: 13px; }
 
-  /* ===== FILTRO DE DATA ===== */
   .filtro {
     background: #1a2338;
     padding: 16px 22px;
@@ -96,13 +116,9 @@
     transition: .2s;
   }
   .filtro button:hover { transform: scale(1.05); }
-  .filtro button.limpar {
-    background: #2a3a5c;
-    color: #a8b8d8;
-  }
+  .filtro button.limpar { background: #2a3a5c; color: #a8b8d8; }
   .filtro button.limpar:hover { background: #3a4a6c; }
 
-  /* ===== KPIs MENSAIS ===== */
   .kpis {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -129,19 +145,8 @@
   }
   .kpi.kpi-freq::before { background: linear-gradient(90deg, #00e676, #00c853); }
   .kpi.kpi-var::before { background: linear-gradient(90deg, #ffc107, #ff9500); }
-  .kpi-label {
-    font-size: 11px;
-    color: #8fa8d4;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .kpi-valor {
-    font-size: 26px;
-    font-weight: bold;
-    color: #4facfe;
-    text-shadow: 0 0 12px rgba(79,172,254,.6);
-  }
+  .kpi-label { font-size: 11px; color: #8fa8d4; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .kpi-valor { font-size: 26px; font-weight: bold; color: #4facfe; text-shadow: 0 0 12px rgba(79,172,254,.6); }
   .kpi.kpi-freq .kpi-valor { color: #00e676; text-shadow: 0 0 12px rgba(0,230,118,.6); }
   .kpi.kpi-var .kpi-valor { color: #ffc107; text-shadow: 0 0 12px rgba(255,193,7,.6); }
   .kpi-sub { font-size: 11px; color: #6b7a99; margin-top: 4px; }
@@ -159,12 +164,7 @@
     position: relative;
     overflow: hidden;
   }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
   .card.util::before { background: linear-gradient(90deg, #4facfe, #00f2fe); }
   .card.cob::before  { background: linear-gradient(90deg, #f093fb, #f5576c); }
 
@@ -203,16 +203,8 @@
     gap: 15px;
     font-weight: bold;
   }
-  .card.cob .resumo {
-    background: rgba(240,147,251,.08);
-    border-left-color: #f093fb;
-  }
-  .resumo strong {
-    color: #fff;
-    font-size: 22px;
-    text-shadow: 0 0 12px rgba(79,172,254,.6);
-    font-weight: bold;
-  }
+  .card.cob .resumo { background: rgba(240,147,251,.08); border-left-color: #f093fb; }
+  .resumo strong { color: #fff; font-size: 22px; text-shadow: 0 0 12px rgba(79,172,254,.6); font-weight: bold; }
   .card.cob .resumo strong { text-shadow: 0 0 12px rgba(240,147,251,.6); }
 
   table { width: 100%; border-collapse: collapse; }
@@ -239,18 +231,10 @@
     font-weight: bold;
   }
   tbody tr { transition: .2s; }
-  tbody tr:hover td {
-    background: rgba(79,172,254,.06);
-  }
-  .card.cob tbody tr:hover td {
-    background: rgba(240,147,251,.06);
-  }
+  tbody tr:hover td { background: rgba(79,172,254,.06); }
+  .card.cob tbody tr:hover td { background: rgba(240,147,251,.06); }
 
-  .num {
-    font-weight: bold;
-    color: #4facfe;
-    font-size: 15px;
-  }
+  .num { font-weight: bold; color: #4facfe; font-size: 15px; }
   .card.cob .num { color: #f093fb; }
 
   .num.alerta {
@@ -258,17 +242,9 @@
     text-shadow: 0 0 10px rgba(255,77,109,.5);
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .6; }
-  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
 
-  .barra-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
+  .barra-wrap { display: flex; align-items: center; justify-content: center; gap: 8px; }
   .barra {
     height: 6px;
     border-radius: 3px;
@@ -279,15 +255,10 @@
   .card.cob .barra { background: linear-gradient(90deg, #f093fb, #f5576c); }
 
   .rank {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px; height: 24px;
-    border-radius: 50%;
-    background: rgba(42,58,92,.8);
-    color: #8fa8d4;
-    font-size: 11px;
-    font-weight: bold;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(42,58,92,.8); color: #8fa8d4;
+    font-size: 11px; font-weight: bold;
   }
   .rank.gold   { background: linear-gradient(135deg, #ffd700, #ff9500); color: #0a0e1a; box-shadow: 0 0 12px rgba(255,200,0,.5); }
   .rank.silver { background: linear-gradient(135deg, #e0e0e0, #a8a8a8); color: #0a0e1a; }
@@ -304,45 +275,15 @@
   }
   tr.total .num { color: #ffc107; text-shadow: 0 0 10px rgba(255,193,7,.5); }
 
-  /* Badge de frequência */
-  .badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: .5px;
-  }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: bold; letter-spacing: .5px; }
   .badge.ok { background: rgba(0,230,118,.15); color: #00e676; border: 1px solid rgba(0,230,118,.4); }
   .badge.falta { background: rgba(255,77,109,.15); color: #ff4d6d; border: 1px solid rgba(255,77,109,.4); }
 
-  /* Filtro info */
-  .filtro-info {
-    text-align: center;
-    max-width: 1500px;
-    margin: 0 auto 15px;
-    color: #8fa8d4;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
+  .filtro-info { text-align: center; max-width: 1500px; margin: 0 auto 15px; color: #8fa8d4; font-size: 12px; letter-spacing: 1px; }
   .filtro-info strong { color: #4facfe; }
 
-  .legenda {
-    text-align: center;
-    margin-top: 30px;
-    color: #4a5a7a;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: bold;
-  }
-  .legenda .dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: #ff4d6d;
-    margin: 0 4px;
-    animation: pulse 2s infinite;
-  }
+  .legenda { text-align: center; margin-top: 30px; color: #4a5a7a; font-size: 12px; letter-spacing: 1px; font-weight: bold; }
+  .legenda .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ff4d6d; margin: 0 4px; animation: pulse 2s infinite; }
 
   @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 </style>
@@ -352,13 +293,20 @@
 <h1>⚡ Painel Gerencial</h1>
 <div class="subtitulo">Central do Cliente • Energisa</div>
 
-<div class="upload">
-  <p>📁 Selecione o arquivo <strong>geral.xlsx</strong></p>
-  <input type="file" id="arquivo" accept=".xlsx,.xls">
-  <div class="status" id="status"></div>
+<div class="topbar">
+  <div class="atualizado" id="ultimaAtualizacao">⏳ Carregando geral.xlsx automaticamente...</div>
+  <div class="botoes">
+    <button onclick="recarregar()" id="btnRecarregar">🔄 Atualizar agora</button>
+  </div>
 </div>
 
-<!-- ===== FILTRO DE DATA (Último uso - coluna D da aba Utilidades) ===== -->
+<div class="upload" id="uploadBox" style="display:none;">
+  <p>📁 Auto-carregamento falhou. Selecione o arquivo <strong>geral.xlsx</strong> manualmente:</p>
+  <input type="file" id="arquivo" accept=".xlsx,.xls">
+</div>
+
+<div class="status" id="status"></div>
+
 <div class="filtro">
   <label>🗓️ Filtrar por último uso (coluna D):</label>
   <input type="date" id="dataInicio" title="Data inicial">
@@ -369,7 +317,6 @@
 </div>
 <div class="filtro-info" id="filtroInfo"></div>
 
-<!-- ===== KPIs MENSAIS ===== -->
 <div class="kpis" id="kpis">
   <div class="kpi">
     <div class="kpi-label">📅 Mês Atual (uso)</div>
@@ -402,7 +349,7 @@
     </div>
     <table>
       <thead><tr><th>RANKING</th><th>Pessoa</th><th>Dias</th><th>Último Login</th><th>Frequência</th></tr></thead>
-      <tbody id="tblUtil"><tr><td colspan="5" style="text-align:center;color:#6b7a99;">Aguardando arquivo...</td></tr></tbody>
+      <tbody id="tblUtil"><tr><td colspan="5" style="text-align:center;color:#6b7a99;">Carregando...</td></tr></tbody>
     </table>
   </div>
 
@@ -414,7 +361,7 @@
     </div>
     <table>
       <thead><tr><th>RANKING</th><th>ID</th><th>Ações</th><th>Destinatário</th></tr></thead>
-      <tbody id="tblCob"><tr><td colspan="4" style="text-align:center;color:#6b7a99;">Aguardando arquivo...</td></tr></tbody>
+      <tbody id="tblCob"><tr><td colspan="4" style="text-align:center;color:#6b7a99;">Carregando...</td></tr></tbody>
     </table>
   </div>
 </div>
@@ -425,11 +372,104 @@
 
 <script>
 /* =========================================================
-   ESTADO GLOBAL
+   AUTO-CARREGAMENTO DO geral.xlsx
    ========================================================= */
-let dadosUtil = [];      // [{ pessoa, diasSet, ultimoDia, ultimoTimestamp, mesesSet }]
-let dadosCob  = [];      // [{ id, contagem, destinatario }]
-let mesesDisponiveis = []; // ["2024-01", "2024-02", ...] ordenados
+let ultimaLeitura = null;
+let autoRefreshTimer = null;
+
+async function carregarArquivoAutomatico(silencioso = false) {
+  const status = document.getElementById('status');
+  const info = document.getElementById('ultimaAtualizacao');
+  if (!silencioso) {
+    info.textContent = '⏳ Carregando geral.xlsx...';
+    info.style.color = '#4facfe';
+  }
+
+  try {
+    const resp = await fetch('geral.xlsx?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('Arquivo geral.xlsx não encontrado no servidor');
+    const blob = await resp.blob();
+
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      try {
+        processarExcel(new Uint8Array(evt.target.result));
+        ultimaLeitura = new Date();
+        atualizarTimestamp();
+        status.textContent = '';
+        document.getElementById('uploadBox').style.display = 'none';
+      } catch (err) {
+        status.textContent = '❌ Erro ao processar: ' + err.message;
+        status.style.color = '#ff4d6d';
+      }
+    };
+    reader.readAsArrayBuffer(blob);
+
+  } catch (err) {
+    document.getElementById('uploadBox').style.display = 'block';
+    info.textContent = '⚠️ Não foi possível carregar automaticamente.';
+    info.style.color = '#ffc107';
+    status.textContent = '⚠️ Selecione o arquivo geral.xlsx manualmente abaixo.';
+    status.style.color = '#ffc107';
+  }
+}
+
+function recarregar() { carregarArquivoAutomatico(); }
+
+function atualizarTimestamp() {
+  if (!ultimaLeitura) return;
+  const d = ultimaLeitura;
+  const hora = String(d.getHours()).padStart(2, '0');
+  const min = String(d.getMinutes()).padStart(2, '0');
+  const seg = String(d.getSeconds()).padStart(2, '0');
+  const el = document.getElementById('ultimaAtualizacao');
+  el.innerHTML = `✅ Última atualização: <strong>${hora}:${min}:${seg}</strong> • Auto-refresh a cada 5 min`;
+  el.style.color = '#8fa8d4';
+}
+
+function iniciarAutoRefresh() {
+  if (autoRefreshTimer) clearInterval(autoRefreshTimer);
+  autoRefreshTimer = setInterval(() => carregarArquivoAutomatico(true), 5 * 60 * 1000);
+}
+
+window.addEventListener('focus', () => {
+  if (ultimaLeitura) carregarArquivoAutomatico(true);
+});
+
+document.getElementById('arquivo').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const status = document.getElementById('status');
+  status.textContent = '⏳ Lendo arquivo...';
+  status.style.color = '#4facfe';
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    try {
+      processarExcel(new Uint8Array(evt.target.result));
+      ultimaLeitura = new Date();
+      atualizarTimestamp();
+      status.textContent = '✅ Arquivo carregado manualmente!';
+      status.style.color = '#00e676';
+    } catch (err) {
+      status.textContent = '❌ Erro ao ler: ' + err.message;
+      status.style.color = '#ff4d6d';
+    }
+  };
+  reader.readAsArrayBuffer(file);
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  carregarArquivoAutomatico();
+  iniciarAutoRefresh();
+});
+
+/* =========================================================
+   PROCESSAMENTO DO EXCEL
+   ========================================================= */
+let dadosUtil = [];
+let dadosCob  = [];
+let mesesDisponiveis = [];
 
 function norm(s) {
   return (s ?? '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
@@ -485,7 +525,6 @@ function classeRank(i) {
   return '';
 }
 
-/* Converte timestamp -> string YYYY-MM-DD para input[type=date] */
 function tsParaInput(ts) {
   if (!ts || ts === -Infinity) return '';
   const d = new Date(ts);
@@ -495,119 +534,91 @@ function tsParaInput(ts) {
   return `${a}-${m}-${dia}`;
 }
 
-/* =========================================================
-   LEITURA DO ARQUIVO
-   ========================================================= */
-document.getElementById('arquivo').addEventListener('change', function(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const status = document.getElementById('status');
-  status.textContent = '⏳ Lendo arquivo...';
-  status.style.color = '#4facfe';
+function processarExcel(uint8) {
+  const wb = XLSX.read(uint8, { type: 'array', cellDates: true });
 
-  const reader = new FileReader();
-  reader.onload = function(evt) {
-    try {
-      const data = new Uint8Array(evt.target.result);
-      const wb = XLSX.read(data, { type: 'array', cellDates: true });
+  const abaUtil = wb.SheetNames.find(n => norm(n).includes('utilidad'));
+  const abaCob  = wb.SheetNames.find(n => norm(n).includes('cobran'));
 
-      const abaUtil = wb.SheetNames.find(n => norm(n).includes('utilidad'));
-      const abaCob  = wb.SheetNames.find(n => norm(n).includes('cobran'));
+  if (abaUtil) {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[abaUtil], { header: 1, defval: '' });
+    const mapa = new Map();
+    const mesesSet = new Set();
 
-      /* ============ UTILIDADES ============ */
-      if (abaUtil) {
-        const rows = XLSX.utils.sheet_to_json(wb.Sheets[abaUtil], { header: 1, defval: '' });
-        const mapa = new Map();
-        const mesesSet = new Set();
+    rows.slice(1).forEach(r => {
+      const pessoa = (r[1] ?? '').toString().trim();
+      if (!pessoa) return;
+      const info = extrairData(r[3]);
+      if (!info) return;
 
-        rows.slice(1).forEach(r => {
-          const pessoa = (r[1] ?? '').toString().trim();   // coluna B
-          if (!pessoa) return;
-          const info = extrairData(r[3]);                   // coluna D
-          if (!info) return;
+      mesesSet.add(info.mes);
 
-          mesesSet.add(info.mes);
-
-          if (!mapa.has(pessoa)) mapa.set(pessoa, {
-            dias: new Set(),
-            meses: new Set(),
-            ultimoTimestamp: -Infinity,
-            ultimoDia: ''
-          });
-          const item = mapa.get(pessoa);
-          item.dias.add(info.dia);
-          item.meses.add(info.mes);
-          if (info.timestamp > item.ultimoTimestamp) {
-            item.ultimoTimestamp = info.timestamp;
-            item.ultimoDia = info.dia;
-          }
-        });
-
-        mesesDisponiveis = [...mesesSet].sort();
-
-        dadosUtil = [...mapa.entries()].map(([pessoa, v]) => ({
-          pessoa,
-          dias: v.dias,
-          meses: v.meses,
-          ultimoDia: v.ultimoDia,
-          ultimoTimestamp: v.ultimoTimestamp
-        }));
-
-        // Preenche datas do filtro com base nos dados reais
-        if (dadosUtil.length) {
-          const timestamps = dadosUtil.map(d => d.ultimoTimestamp).filter(t => t > -Infinity);
-          if (timestamps.length) {
-            document.getElementById('dataInicio').value = tsParaInput(Math.min(...timestamps));
-            document.getElementById('dataFim').value    = tsParaInput(Math.max(...timestamps));
-          }
-        }
-
-        renderizarUtilidades();
-        calcularKPIs();
-      } else {
-        document.getElementById('tblUtil').innerHTML = '<tr><td colspan="5" style="text-align:center;color:#ff4d6d;">Aba "Utilidades" não encontrada</td></tr>';
+      if (!mapa.has(pessoa)) mapa.set(pessoa, {
+        dias: new Set(),
+        meses: new Set(),
+        ultimoTimestamp: -Infinity,
+        ultimoDia: ''
+      });
+      const item = mapa.get(pessoa);
+      item.dias.add(info.dia);
+      item.meses.add(info.mes);
+      if (info.timestamp > item.ultimoTimestamp) {
+        item.ultimoTimestamp = info.timestamp;
+        item.ultimoDia = info.dia;
       }
+    });
 
-      /* ============ COBRANÇA ============ */
-      if (abaCob) {
-        const rows = XLSX.utils.sheet_to_json(wb.Sheets[abaCob], { header: 1, defval: '' });
-        const mapaCob = new Map();
+    mesesDisponiveis = [...mesesSet].sort();
 
-        rows.slice(1).forEach(r => {
-          const id = (r[2] ?? '').toString().trim();
-          if (!id) return;
-          const dest = (r[4] ?? '').toString().trim();
+    dadosUtil = [...mapa.entries()].map(([pessoa, v]) => ({
+      pessoa,
+      dias: v.dias,
+      meses: v.meses,
+      ultimoDia: v.ultimoDia,
+      ultimoTimestamp: v.ultimoTimestamp
+    }));
 
-          if (!mapaCob.has(id)) mapaCob.set(id, { contagem: 0, destinatario: dest });
-          const item = mapaCob.get(id);
-          item.contagem += 1;
-          if (!item.destinatario && dest) item.destinatario = dest;
-        });
-
-        dadosCob = [...mapaCob.entries()].map(([id, v]) => ({
-          id,
-          contagem: v.contagem,
-          destinatario: v.destinatario
-        }));
-
-        renderizarCobranca();
-      } else {
-        document.getElementById('tblCob').innerHTML = '<tr><td colspan="4" style="text-align:center;color:#ff4d6d;">Aba "Cobrança" não encontrada</td></tr>';
+    if (dadosUtil.length) {
+      const timestamps = dadosUtil.map(d => d.ultimoTimestamp).filter(t => t > -Infinity);
+      if (timestamps.length) {
+        document.getElementById('dataInicio').value = tsParaInput(Math.min(...timestamps));
+        document.getElementById('dataFim').value    = tsParaInput(Math.max(...timestamps));
       }
-
-      status.textContent = '✅ Arquivo carregado com sucesso!';
-      status.style.color = '#00e676';
-    } catch (err) {
-      status.textContent = '❌ Erro ao ler: ' + err.message;
-      status.style.color = '#ff4d6d';
     }
-  };
-  reader.readAsArrayBuffer(file);
-});
 
-/* =========================================================
-   RENDERIZAÇÃO — UTILIDADES (com filtro de data)
-   ========================================================= */
+    renderizarUtilidades();
+    calcularKPIs();
+  } else {
+    document.getElementById('tblUtil').innerHTML = '<tr><td colspan="5" style="text-align:center;color:#ff4d6d;">Aba "Utilidades" não encontrada</td></tr>';
+  }
+
+  if (abaCob) {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[abaCob], { header: 1, defval: '' });
+    const mapaCob = new Map();
+
+    rows.slice(1).forEach(r => {
+      const id = (r[2] ?? '').toString().trim();
+      if (!id) return;
+      const dest = (r[4] ?? '').toString().trim();
+
+      if (!mapaCob.has(id)) mapaCob.set(id, { contagem: 0, destinatario: dest });
+      const item = mapaCob.get(id);
+      item.contagem += 1;
+      if (!item.destinatario && dest) item.destinatario = dest;
+    });
+
+    dadosCob = [...mapaCob.entries()].map(([id, v]) => ({
+      id,
+      contagem: v.contagem,
+      destinatario: v.destinatario
+    }));
+
+    renderizarCobranca();
+  } else {
+    document.getElementById('tblCob').innerHTML = '<tr><td colspan="4" style="text-align:center;color:#ff4d6d;">Aba "Cobrança" não encontrada</td></tr>';
+  }
+}
+
 function renderizarUtilidades() {
   const inicio = document.getElementById('dataInicio').value;
   const fim    = document.getElementById('dataFim').value;
@@ -615,10 +626,8 @@ function renderizarUtilidades() {
   const inicioTs = inicio ? new Date(inicio + 'T00:00:00').getTime() : -Infinity;
   const fimTs    = fim    ? new Date(fim    + 'T23:59:59').getTime() : Infinity;
 
-  // Aplica filtro na coluna D (último uso)
   let filtrados = dadosUtil.filter(d => d.ultimoTimestamp >= inicioTs && d.ultimoTimestamp <= fimTs);
 
-  // Atualiza info do filtro
   const info = document.getElementById('filtroInfo');
   if (inicio || fim) {
     info.innerHTML = `Mostrando <strong>${filtrados.length}</strong> de <strong>${dadosUtil.length}</strong> usuários (filtro por último uso)`;
@@ -626,7 +635,6 @@ function renderizarUtilidades() {
     info.innerHTML = `Mostrando <strong>${dadosUtil.length}</strong> usuários (sem filtro)`;
   }
 
-  // Ordena por dias (crescente = quem usa menos primeiro)
   filtrados.sort((a, b) => a.dias.size - b.dias.size || a.pessoa.localeCompare(b.pessoa, 'pt-BR'));
 
   const totalDias = filtrados.reduce((acc, d) => acc + d.dias.size, 0);
@@ -644,8 +652,6 @@ function renderizarUtilidades() {
   filtrados.forEach((d, i) => {
     const alerta = d.dias.size <= 2 ? ' alerta' : '';
     const largura = Math.max((d.dias.size / maxDias) * 100, 4);
-
-    // Frequência: usuário presente em todos os meses disponíveis?
     const freq = d.meses.size;
     const badge = (totalMeses > 0 && freq === totalMeses)
       ? `<span class="badge ok">${freq}/${totalMeses} meses</span>`
@@ -674,9 +680,6 @@ function renderizarUtilidades() {
   document.getElementById('tblUtil').innerHTML = html;
 }
 
-/* =========================================================
-   RENDERIZAÇÃO — COBRANÇA
-   ========================================================= */
 function renderizarCobranca() {
   const totalAcoes = dadosCob.reduce((acc, d) => acc + d.contagem, 0);
   document.getElementById('resumoCob').textContent = totalAcoes;
@@ -716,9 +719,6 @@ function renderizarCobranca() {
   document.getElementById('tblCob').innerHTML = html;
 }
 
-/* =========================================================
-   KPIs MENSAIS
-   ========================================================= */
 function calcularKPIs() {
   if (!dadosUtil.length || !mesesDisponiveis.length) {
     document.getElementById('kpiMesAtual').textContent = '—';
@@ -729,15 +729,11 @@ function calcularKPIs() {
   }
 
   const totalMeses = mesesDisponiveis.length;
-
-  // Conta quantos usuários únicos entraram em cada mês
-  const porMes = {}; // mes -> Set de pessoas
+  const porMes = {};
   mesesDisponiveis.forEach(m => porMes[m] = new Set());
 
   dadosUtil.forEach(d => {
-    d.meses.forEach(m => {
-      if (porMes[m]) porMes[m].add(d.pessoa);
-    });
+    d.meses.forEach(m => { if (porMes[m]) porMes[m].add(d.pessoa); });
   });
 
   const mesesOrdenados = [...mesesDisponiveis].sort();
@@ -747,7 +743,6 @@ function calcularKPIs() {
   const usosMesAtual = porMes[mesAtual]?.size || 0;
   const usosMesAnterior = mesAnterior ? (porMes[mesAnterior]?.size || 0) : 0;
 
-  // Formata label "2024-03" -> "Mar/2024"
   const nomesMeses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
   function labelMes(m) {
     if (!m) return '—';
@@ -761,7 +756,6 @@ function calcularKPIs() {
   document.getElementById('kpiMesAnterior').textContent = mesAnterior ? usosMesAnterior : '—';
   document.getElementById('kpiMesAnteriorLabel').textContent = mesAnterior ? labelMes(mesAnterior) : 'Sem mês anterior';
 
-  // Variação
   const elVar = document.getElementById('kpiVariacao');
   if (mesAnterior && usosMesAnterior > 0) {
     const variacao = ((usosMesAtual - usosMesAnterior) / usosMesAnterior) * 100;
@@ -774,19 +768,13 @@ function calcularKPIs() {
     document.getElementById('kpiVariacaoLabel').textContent = 'Sem base de comparação';
   }
 
-  // Frequência: usuários presentes em TODOS os meses
   const frequentes = dadosUtil.filter(d => d.meses.size === totalMeses).length;
   const pct = dadosUtil.length ? ((frequentes / dadosUtil.length) * 100).toFixed(0) : 0;
   document.getElementById('kpiFrequentes').textContent = `${frequentes} (${pct}%)`;
   document.getElementById('kpiFrequentesLabel').textContent = `em ${totalMeses} mês(es) • ${dadosUtil.length} usuários`;
 }
 
-/* =========================================================
-   AÇÕES DO FILTRO
-   ========================================================= */
-function aplicarFiltro() {
-  renderizarUtilidades();
-}
+function aplicarFiltro() { renderizarUtilidades(); }
 
 function limparFiltro() {
   document.getElementById('dataInicio').value = '';
